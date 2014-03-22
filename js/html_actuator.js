@@ -160,7 +160,7 @@ HTMLActuator.prototype.message = function (won) {
 
   var text3 = function (m) { var r = 0; while (m > 1) r++, m >>= 1; return r; }
   var type    = won ? "game-won" : "game-over";
-  var message = won ? "Congratulations! You have reached the top of biological classification system." : "You have stumbled and fallen on your way towords the top of biological classification system.";
+  var message = won ? "Congratulations!" : "GAME OVER";
 
   if (typeof ga !== "undefined") {
     ga("send", "event", "game", "end", type, this.score);
@@ -184,13 +184,12 @@ HTMLActuator.prototype.scoreTweetButton = function () {
   var tweet = document.createElement("a");
   tweet.classList.add("twitter-share-button");
   tweet.setAttribute("href", "https://twitter.com/share");
-  tweet.setAttribute("data-via", "aenonsun");
-  tweet.setAttribute("data-url", "http://aenon.github.io/life");
-  tweet.setAttribute("data-counturl", "http://aenon.github.io/life");
+  tweet.setAttribute("data-via", "ferminone");
+  tweet.setAttribute("data-url", "http://fermione.github.io/galaxy/");
+  tweet.setAttribute("data-counturl", "http://fermione.github.io/galaxy/");
   tweet.textContent = "Tweet";
 
-  var text = "I scored " + this.score + " points at life, a game where you " +
-             "join ranks of biological classifications to score high! #life_class_game";
+  var text = "I scored " + this.score + " points at Galaxy.";
   tweet.setAttribute("data-text", text);
 
   return tweet;
